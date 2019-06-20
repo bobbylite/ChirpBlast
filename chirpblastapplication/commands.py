@@ -11,8 +11,3 @@ class Login(FormView):
         data  = form.clean()
         print(data['username'])
         return super().form_valid(form)
-
-    def clean(self):
-        super().clean()
-        username = self.cleaned_data.get("Username")
-        print(username)
