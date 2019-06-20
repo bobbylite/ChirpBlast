@@ -8,4 +8,11 @@ class Login(FormView):
     success_url = '/index'
     
     def form_valid(self, form):
+        data  = form.clean()
+        print(data['username'])
         return super().form_valid(form)
+
+    def clean(self):
+        super().clean()
+        username = self.cleaned_data.get("Username")
+        print(username)
