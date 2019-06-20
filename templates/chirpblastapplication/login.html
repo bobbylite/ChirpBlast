@@ -35,23 +35,32 @@
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-    <div class="blue-grey lighten-5" id="index-banner">
+
+    <div class="white" id="index-banner">
         <div class="container">
-            <br><br>
-            <br><br>
-            <h1 class="header center" style="color:#29b6f6">Welcome to ChirpBlast</h1>
-            <div class="row center">
-                <h5 class="header col s12 light">A modern high-level Python Web framework known as Django</h5>
-                <h5 class="header col s12 light">Based on Material Design</h5>
+            <div class="row">
+                <form class="col s10">
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5">
+                            <a class="waves-effect waves-green btn-flat">Login</a>
+                            <a class="waves-effect waves-green btn-flat">Sign Up</a>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light light-blue lighten-1">Get Started</a>
-            </div>
-            <br><br>
-            <div class="row center">
-                <p>Your ip address is <strong>{{ geoData.ip }}</strong>, and you are probably in <strong>{{ geoData.country_name }}</strong> right now.</p>
-            </div>
-            <br><br>
         </div>
     </div>
 

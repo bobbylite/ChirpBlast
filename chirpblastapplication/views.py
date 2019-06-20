@@ -12,7 +12,8 @@ class IndexView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
-        context.update({'data': self.__testJson})
+        geoData = self.__testData
+        context.update({'geoData': geoData})
         return context
 
     def Test(sefl):
@@ -21,5 +22,9 @@ class IndexView(TemplateView):
             return webrequest.get()
         except:
             return 0
+
+class LoginView(TemplateView):
+    template_name = 'chirpblastapplication/login.html'
+    
 
     
