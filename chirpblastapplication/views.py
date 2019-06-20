@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .services.web.restservice import WebRequest
+from .forms.chirpblastapplication.login import LoginForm
+from django.views.generic.edit import FormView
 
 class IndexView(TemplateView):
     template_name = 'chirpblastapplication/index.html'
@@ -23,8 +25,16 @@ class IndexView(TemplateView):
         except:
             return 0
 
-class LoginView(TemplateView):
+class LoginView(FormView):
     template_name = 'chirpblastapplication/login.html'
-    
+    form_class = LoginForm
+    user_authenticated = False
+
+    def get_context_data(self, **kwargs):
+        context = super(LoginView, self).get_context_data(**kwargs)
+        context.update({'user': self.user_authenticated})
+        return context
+
+            
 
     
